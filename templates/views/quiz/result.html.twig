@@ -1,0 +1,29 @@
+{% extends '@layout/base.html.twig' %}
+
+{% block title %}Quiz{% endblock %}
+{% block description %}Quiz{% endblock %}
+{% block keywords %}Quiz{% endblock %}
+
+{% block content %}
+    <h1>Result for quiz "{{ quizResult.quizName }}"</h1>
+    <h2>Correct</h2>
+    <table class="table">
+        {% for result in quizResult.correctQuestionResults %}
+            <tr>
+                <td>
+                    {{ result.questionText }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h2>Incorrect</h2>
+    <table class="table">
+        {% for result in quizResult.incorrectQuestionResults %}
+            <tr>
+                <td>
+                    {{ result.questionText }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

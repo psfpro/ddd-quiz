@@ -1,0 +1,6 @@
+landing:
+  resource: '../src/Common/Infrastructure/UserInterface/Controller/'
+  type: annotation
+quiz:
+  resource: '../src/Quiz/Infrastructure/UserInterface/Controller/'
+  type: annotation

@@ -1,0 +1,10 @@
+{% extends '@layout/base.html.twig' %}
+
+{% block title %}Quiz{% endblock %}
+{% block description %}Quiz{% endblock %}
+{% block keywords %}Quiz{% endblock %}
+
+{% block content %}
+    <h1>{{ question.text }}</h1>
+    {{ form(form) }}
+{% endblock %}

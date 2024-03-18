@@ -1,0 +1,51 @@
+{% extends '@layout/base.html.twig' %}
+
+{% block title %}QuizFlex{% endblock %}
+{% block description %}QuizFlex{% endblock %}
+{% block keywords %}QuizFlex{% endblock %}
+
+{% block content %}
+    <div class="row align-items-center g-lg-12 py-2">
+        <div class="col-lg-12 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3">Beyond Right or Wrong</h1>
+            <p class="col-lg-10 fs-4">
+                Our service, QuizFlex, is an innovative online testing platform designed to enhance learning and
+                assessment through quizzes with fuzzy logic capabilities. Unlike traditional quiz systems, QuizFlex
+                allows for questions where multiple answers can be correct, individually or in specific combinations,
+                catering to complex problem-solving skills and understanding beyond binary right or wrong answers. Ideal
+                for educational institutions, training programs, and self-learning, the platform supports the creation
+                of customizable quizzes, real-time feedback, and detailed analytics to track progress. Users can engage
+                in a variety of subjects, benefiting from a nuanced evaluation system that recognizes and rewards
+                critical thinking and creativity. With QuizFlex, educators and learners alike can explore a more
+                holistic approach to knowledge assessment and development.
+            </p>
+        </div>
+    </div>
+    <div>
+        <h2>Quizzes</h2>
+        <table class="table">
+            {% for quiz in quizzes %}
+                <tr>
+                    <td>
+                        <a class="btn btn-warning me-2"
+                           href="{{ path('quiz_start', {quizId: quiz.id}) }}">Start quiz</a>
+                        <a href="{{ path('quiz_start', {quizId: quiz.id}) }}">{{ quiz.name }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Results</h2>
+        <table class="table">
+            {% for result in results %}
+                <tr>
+                    <td>
+                        <a class="btn btn-warning me-2"
+                           href="{{ path('quiz_result', {quizResultId: result.id}) }}">Results</a>
+                        <a href="{{ path('quiz_result', {quizResultId: result.id}) }}">{{ result.quizName }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
